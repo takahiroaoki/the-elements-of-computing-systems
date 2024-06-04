@@ -1,6 +1,6 @@
 package hardware;
 
-public class Chip {
+public class Gate {
 	/**
 	 * NAND (base bool gate)
 	 * 
