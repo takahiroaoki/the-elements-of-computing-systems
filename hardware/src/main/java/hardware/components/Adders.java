@@ -45,24 +45,7 @@ public class Adders {
 	 */
 	public static boolean[] add16(boolean[] a, boolean[] b) {
 		boolean[] prv = { false, false };
-		boolean[] out = {
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-		};
+		boolean[] out = BitArrayConsts.false16.clone();
 		for (int i = 15; i >= 0; i--) {
 			prv = fullAdder(a[i], b[i], prv[0]);
 			out[i] = prv[1];
