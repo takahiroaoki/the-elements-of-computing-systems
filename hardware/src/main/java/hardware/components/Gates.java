@@ -1,6 +1,8 @@
-package hardware;
+package hardware.components;
 
-public class Chip {
+import hardware.consts.BitArrayConsts;
+
+public class Gates {
 	/**
 	 * NAND (base bool gate)
 	 * 
@@ -49,10 +51,10 @@ public class Chip {
 	 * 
 	 * @param a
 	 * @param b
-	 * @return if a!=b then return 0 else return 1
+	 * @return if a!=b then return 1 else return 0
 	 */
 	public static boolean xor(boolean a, boolean b) {
-		return or(and(a, b), and(not(a), not(b)));
+		return not(or(and(a, b), and(not(a), not(b))));
 	}
 
 	/**
@@ -284,29 +286,11 @@ public class Chip {
 	 *         else if sel={true,true} return {falses, falses, falses, in}
 	 */
 	public static boolean[][] dmux4Way(boolean[] in, boolean[] sel) {
-		boolean[] falses = {
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-		};
 		boolean[][] out = {
-				mux16(falses, in, and(not(sel[0]), not(sel[1]))),
-				mux16(falses, in, and(not(sel[0]), sel[1])),
-				mux16(falses, in, and(sel[0], not(sel[1]))),
-				mux16(falses, in, and(sel[0], sel[1])),
+				mux16(BitArrayConsts.false16, in, and(not(sel[0]), not(sel[1]))),
+				mux16(BitArrayConsts.false16, in, and(not(sel[0]), sel[1])),
+				mux16(BitArrayConsts.false16, in, and(sel[0], not(sel[1]))),
+				mux16(BitArrayConsts.false16, in, and(sel[0], sel[1])),
 		};
 		return out;
 	}
@@ -334,33 +318,15 @@ public class Chip {
 	 *         false, falses, falses, in}
 	 */
 	public static boolean[][] dmux8Way(boolean[] in, boolean[] sel) {
-		boolean[] falses = {
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-				false,
-		};
 		boolean[][] out = {
-				mux16(falses, in, and(not(sel[0]), and(not(sel[1]), not(sel[2])))),
-				mux16(falses, in, and(not(sel[0]), and(not(sel[1]), sel[2]))),
-				mux16(falses, in, and(not(sel[0]), and(sel[1], not(sel[2])))),
-				mux16(falses, in, and(not(sel[0]), and(sel[1], sel[2]))),
-				mux16(falses, in, and(sel[0], and(not(sel[1]), not(sel[2])))),
-				mux16(falses, in, and(sel[0], and(not(sel[1]), sel[2]))),
-				mux16(falses, in, and(sel[0], and(sel[1], not(sel[2])))),
-				mux16(falses, in, and(sel[0], and(sel[1], sel[2]))),
+				mux16(BitArrayConsts.false16, in, and(not(sel[0]), and(not(sel[1]), not(sel[2])))),
+				mux16(BitArrayConsts.false16, in, and(not(sel[0]), and(not(sel[1]), sel[2]))),
+				mux16(BitArrayConsts.false16, in, and(not(sel[0]), and(sel[1], not(sel[2])))),
+				mux16(BitArrayConsts.false16, in, and(not(sel[0]), and(sel[1], sel[2]))),
+				mux16(BitArrayConsts.false16, in, and(sel[0], and(not(sel[1]), not(sel[2])))),
+				mux16(BitArrayConsts.false16, in, and(sel[0], and(not(sel[1]), sel[2]))),
+				mux16(BitArrayConsts.false16, in, and(sel[0], and(sel[1], not(sel[2])))),
+				mux16(BitArrayConsts.false16, in, and(sel[0], and(sel[1], sel[2]))),
 		};
 		return out;
 	}
