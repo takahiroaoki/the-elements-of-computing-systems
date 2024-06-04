@@ -1,6 +1,6 @@
 package hardware;
 
-public class Gate {
+public class Gates {
 	/**
 	 * NAND (base bool gate)
 	 * 
