@@ -1,5 +1,7 @@
 package hardware.components;
 
+import hardware.consts.BitArrayConsts;
+
 public class Adders {
 	/**
 	 * HalfAdder
@@ -67,5 +69,17 @@ public class Adders {
 		}
 
 		return out;
+	}
+
+	/**
+	 * Inc16
+	 * 
+	 * @param in
+	 * @return
+	 */
+	public static boolean[] inc16(boolean[] in) {
+		boolean[] one = BitArrayConsts.false16.clone();
+		one[one.length - 1] = true;
+		return add16(in, one);
 	}
 }

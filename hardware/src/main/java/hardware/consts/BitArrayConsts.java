@@ -1,7 +1,7 @@
 package hardware.consts;
 
 public class BitArrayConsts {
-	public static boolean[] true16 = {
+	public static final boolean[] true16 = {
 			true,
 			true,
 			true,
@@ -20,7 +20,7 @@ public class BitArrayConsts {
 			true,
 	};
 
-	public static boolean[] false16 = {
+	public static final boolean[] false16 = {
 			false,
 			false,
 			false,

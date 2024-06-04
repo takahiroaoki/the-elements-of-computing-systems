@@ -80,4 +80,27 @@ public class AddersTest {
 		assertArrayEquals(BitArrayConsts.true16, Adders.add16(BitArrayConsts.false16, BitArrayConsts.true16));
 		assertArrayEquals(BitArrayConsts.false16, Adders.add16(max, maxComp));
 	}
+
+	@Test
+	void testInc16() {
+		boolean[] minus1 = {
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+				true,
+		};
+		assertArrayEquals(BitArrayConsts.false16, Adders.inc16(minus1));
+	}
 }
