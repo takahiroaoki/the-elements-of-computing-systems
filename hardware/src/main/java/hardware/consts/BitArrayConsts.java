@@ -38,4 +38,23 @@ public class BitArrayConsts {
 			false,
 			false,
 	};
+
+	public static final boolean[] one16 = {
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			true,
+	};
 }
